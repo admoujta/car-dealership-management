@@ -5,6 +5,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+#include <errno.h>
+#include <limits.h>
+#include <math.h>
 
 typedef struct Voiture {
     char marque[50];
@@ -47,7 +50,10 @@ void    Recherche_annee(Voiture *head,int annee);
 void    Recherche_prix(Voiture *head,float prix);
 void    Recherche_avance(Voiture *head, char marque[], char model[], int annee, float prix);
 void    sauv_fichier(char *fichier,Voiture *head);
-void    charger_fichier(char *fichier);
+Voiture *charger_fichier(char *fichier, Voiture *head);
+void saisir_entier(int *valeur);
+void saisir_prix(float *valeur);
+void saisir_texte(char *texte);
 void    menu_Fichier(Voiture **head);
 void    Gestion();
 void    menu_principale();
